@@ -10,9 +10,10 @@ class model
 
     function __construct()
     {
+       // mysql://b62ff97167ba14:d915f3dc@us-cdbr-iron-east-04.cleardb.net/heroku_77c71843ce5e91a?reconnect=true
 
-        $this->linkDB = mysqli_connect("localhost", "testBrill", "1");
-        mysqli_select_db($this->linkDB, "testBrill") or die("Error:" . mysqli_error($this->linkDB));
+        $this->linkDB = mysqli_connect("us-cdbr-iron-east-04.cleardb.net", "b62ff97167ba14", "d915f3dc");
+        mysqli_select_db($this->linkDB, "heroku_77c71843ce5e91a") or die("Error:" . mysqli_error($this->linkDB));
         mysqli_query($this->linkDB, "SET NAMES 'utf8'");
 
     }

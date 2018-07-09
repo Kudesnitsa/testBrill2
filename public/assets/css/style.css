@@ -2,3 +2,59 @@
     padding: 0;
     margin: 0;
 }
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.form-add-client,div.table{
+    height: 50vh;
+    overflow: auto;
+    position: relative;
+    box-sizing: border-box;
+}
+.form-add-client{
+    padding-bottom: 50px;
+}
+div.table{
+    border-top: 2px solid #284350;
+}
+input{
+    text-transform: capitalize;
+    height: 40px;
+    width: 100%;
+    max-width: 320px;
+    border-radius: .25rem;
+    border: 1px solid rgba(7, 0, 80, 0.26);
+    box-shadow: none;
+    display: block;
+    padding:0  10px;
+    margin: 10px auto;
+}
+.add-phone,.remove-phone{
+    max-width: 40px;
+    box-sizing: border-box;
+}
+
+.group_phones .phone{
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 320px;
+    white-space: nowrap;
+}
+.group_phones input[type="text"]{
+    display: inline-block;
+    width: calc(100% - 50px);
+}
+
+.add-client{
+    background: #738dff;
+    color: white;
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 50%;
+    right: 20px;
+    border-radius: 50%;
+}

@@ -10,10 +10,21 @@ class model
 
     function __construct()
     {
-       // mysql://b62ff97167ba14:d915f3dc@us-cdbr-iron-east-04.cleardb.net/heroku_77c71843ce5e91a?reconnect=true
 
-        $this->linkDB = mysqli_connect("us-cdbr-iron-east-04.cleardb.net", "b62ff97167ba14", "d915f3dc");
-        mysqli_select_db($this->linkDB, "heroku_77c71843ce5e91a") or die("Error:" . mysqli_error($this->linkDB));
+        if ($_SERVER['SERVER_NAME'] != "testbrilliant2") {
+            $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+            $host = $url["host"];
+            $username = $url["user"];
+            $password = $url["pass"];
+            $dbname = substr($url["path"], 1);
+        } else {
+            $host = 'localhost';
+            $dbname = 'testBrill';
+            $username = 'testBrill';
+            $password = '1';
+        }
+        $this->linkDB = mysqli_connect($host, $username, $password);
+        mysqli_select_db($this->linkDB, $dbname) or die("Error:" . mysqli_error($this->linkDB));
         mysqli_query($this->linkDB, "SET NAMES 'utf8'");
 
     }

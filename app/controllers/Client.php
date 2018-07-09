@@ -7,7 +7,7 @@ class Client
 
     function __construct()
     {
-        include_once('class.php');
+        include_once(APP_DIR . '/models/Client.php');
         $this->model = new Model();
         $this->clients = $this->getClients();
     }
